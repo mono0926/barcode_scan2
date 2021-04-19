@@ -7,7 +7,7 @@
 
 Original [barcode_scan](https://pub.dev/packages/barcode_scan) was discontinued, so [barcode_scan2](https://pub.dev/packages/barcode_scan) was borned with sound null safety support🎉
 
-# barcode_scanner2
+# barcode_scan2
 
 A flutter plugin for scanning 2D barcodes and QR codes.
 
