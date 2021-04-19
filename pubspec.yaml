@@ -16,5 +16,9 @@ environment:
 
 flutter:
   plugin:
-    androidPackage: de.mintware.barcode_scan
-    pluginClass: BarcodeScanPlugin
+    platforms:
+      android:
+        package: de.mintware.barcode_scan
+        pluginClass: BarcodeScanPlugin
+      ios:
+        pluginClass: BarcodeScanPlugin
