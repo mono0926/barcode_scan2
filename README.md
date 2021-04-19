@@ -1,18 +1,15 @@
-[![GitHub license](https://img.shields.io/github/license/mintware-de/flutter_barcode_reader.svg)](https://github.com/mintware-de/flutter_barcode_reader/blob/master/LICENSE)
-[![GitHub stars](https://img.shields.io/github/stars/mintware-de/flutter_barcode_reader)](https://github.com/mintware-de/flutter_barcode_reader/stargazers)
-[![Pub](https://img.shields.io/pub/v/barcode_scan.svg)](https://pub.dartlang.org/packages/barcode_scan)
-[![GitHub forks](https://img.shields.io/github/forks/mintware-de/flutter_barcode_reader)](https://github.com/mintware-de/flutter_barcode_reader/network)
+[![GitHub license](https://img.shields.io/github/license/mono0926/barcode_scan2.svg)](https://github.com/mono0926/barcode_scan2/blob/master/LICENSE)
+[![GitHub stars](https://img.shields.io/github/stars/mono0926/barcode_scan2)](https://github.com/mono0926/barcode_scan2/stargazers)
+[![Pub](https://img.shields.io/pub/v/barcode_scan2.svg)](https://pub.dartlang.org/packages/barcode_scan2)
+[![GitHub forks](https://img.shields.io/github/forks/mono0926/barcode_scan2)](https://github.com/mono0926/barcode_scan2/network)
 
-# DEVELOPMENT HAS BEEN DISCONTINUED
-Since there are many other libraries which provides more and better functionality in barcode scanning, I decided to discontinue the development of this project.
-I recommend the Firebase ML Vision package as an alternative: https://pub.dev/packages/firebase_ml_vision
+## Reborned🎉
 
-<br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br><br>
+Original [barcode_scan](https://pub.dev/packages/barcode_scan) was discontinued, so [barcode_scan2](https://pub.dev/packages/barcode_scan) was borned with sound null safety support🎉
 
 # Barcode Scanner
 
-A flutter plugin for scanning 2D barcodes and QR codes. 
+A flutter plugin for scanning 2D barcodes and QR codes.
 
 This provides a simple wrapper for two commonly used iOS and Android libraries:
 
@@ -32,7 +29,7 @@ Android: https://github.com/dm77/barcodescanner
 For Android, you must do the following before you can use the plugin:
 
 * Add the camera permission to your AndroidManifest.xml
-     
+
      `<uses-permission android:name="android.permission.CAMERA" />`
 
 * This plugin is written in Kotlin. Therefore, you need to add Kotlin support to your project. See [installing the Kotlin plugin](https://kotlinlang.org/docs/tutorials/kotlin-android.html#installing-the-kotlin-plugin).
@@ -91,7 +88,7 @@ import 'package:barcode_scan/barcode_scan.dart';
 
 void main() async {
   var result = await BarcodeScanner.scan();
-  
+
   print(result.type); // The result type (barcode, cancelled, failed)
   print(result.rawContent); // The barcode content
   print(result.format); // The barcode format (as enum)
@@ -108,13 +105,13 @@ You can pass options to the scan method:
 import 'package:barcode_scan/barcode_scan.dart';
 
 void main() async {
-  
+
   var options = ScanOptions(
     // set the options
   );
 
   var result = await BarcodeScanner.scan(options: options);
-  
+
   // ...
 }
 ```
