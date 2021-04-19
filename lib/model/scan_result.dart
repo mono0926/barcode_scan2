@@ -21,8 +21,5 @@ class ScanResult {
     this.rawContent = "",
     this.format = BarcodeFormat.unknown,
     this.formatNote = "",
-  })  : assert(type != null),
-        assert(rawContent != null),
-        assert(format != null),
-        assert(formatNote != null);
+  });
 }

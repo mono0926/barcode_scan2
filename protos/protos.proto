@@ -16,7 +16,6 @@ message AndroidConfiguration {
     // This parameter is only supported on Android devices.
     bool useAutoFocus = 2;
 }
-
 // protos/barcode_format.proto
 enum BarcodeFormat {
     unknown = 0;
@@ -32,7 +31,6 @@ enum BarcodeFormat {
     upce = 10;
     pdf417 = 11;
 }
-
 // protos/configuration.proto
 message Configuration {
     // Strings which are displayed to the user
