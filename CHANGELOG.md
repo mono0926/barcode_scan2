@@ -1,3 +1,7 @@
+## v4.0.0 - 2021-04-19
+
+- Original [barcode_scan](https://pub.dev/packages/barcode_scan) was discontinued, so [barcode_scan2](https://pub.dev/packages/barcode_scan) was borned with sound null safety support🎉
+
 ## v3.0.1 - 2020-05-08
 
 Features:
@@ -19,11 +23,11 @@ Bugfixes:
 
 ## v3.0.0-dev.2 - 2020-04-12
 
-Migrated the changes of the 2.0.0 track 
+Migrated the changes of the 2.0.0 track
 
 - Fixed the request camera permission flow on Android
 
-Updated also the Flutter env. SDK constraint to ">=2.1.0 <3.0.0" 
+Updated also the Flutter env. SDK constraint to ">=2.1.0 <3.0.0"
 
 ## v3.0.0-dev.1 - 2020-04-12
 
@@ -90,7 +94,7 @@ Breaking Change: Adds support for AndroidX
 ## v0.0.6 - 2018-08-29
 
 * Fix android dependencies
-* iOS scanner now looks like Android thanks to @dustin-graham 
+* iOS scanner now looks like Android thanks to @dustin-graham
 
 ## v0.0.4 - 2018-02-8
 

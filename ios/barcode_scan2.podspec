@@ -3,7 +3,7 @@
 # Run `pod lib lint barcode_scan.podspec' to validate before publishing.
 #
 Pod::Spec.new do |s|
-  s.name             = 'barcode_scan'
+  s.name             = 'barcode_scan2'
   s.version          = '0.0.1'
   s.summary          = 'A new flutter plugin project.'
   s.description      = <<-DESC

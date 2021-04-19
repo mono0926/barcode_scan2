@@ -34,8 +34,5 @@ class ScanOptions {
       "flash_on": "Flash on",
       "flash_off": "Flash off",
     },
-  })  : assert(restrictFormat != null),
-        assert(useCamera != null),
-        assert(useCamera >= -1),
-        assert(android != null);
+  }) : assert(useCamera >= -1);
 }

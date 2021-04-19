@@ -1,4 +1,4 @@
-library mintware.barcode_scan;
+library mono0926.barcode_scan2;
 
 export 'gen/protos/protos.pb.dart' show BarcodeFormat, ResultType;
 
