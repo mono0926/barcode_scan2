@@ -7,15 +7,14 @@
 
 Original [barcode_scan](https://pub.dev/packages/barcode_scan) was discontinued, so [barcode_scan2](https://pub.dev/packages/barcode_scan) was borned with sound null safety support🎉
 
-# Barcode Scanner
+# barcode_scanner2
 
 A flutter plugin for scanning 2D barcodes and QR codes.
 
 This provides a simple wrapper for two commonly used iOS and Android libraries:
 
-iOS: https://github.com/mikebuss/MTBBarcodeScanner
-
-Android: https://github.com/dm77/barcodescanner
+- iOS: https://github.com/mikebuss/MTBBarcodeScanner
+- Android: https://github.com/dm77/barcodescanner
 
 ### Features
 - [x] Scan 2D barcodes
