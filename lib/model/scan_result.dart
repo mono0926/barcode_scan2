@@ -11,15 +11,15 @@ class ScanResult {
   });
 
   /// Represents the type of the result
-  ResultType type;
+  final ResultType type;
 
   /// The barcode itself if the result type is barcode.
   /// If the result type is error it contains the error message
-  String rawContent;
+  final String rawContent;
 
   /// The barcode format
-  BarcodeFormat format;
+  final BarcodeFormat format;
 
   /// If the format is unknown, this field holds additional information
-  String formatNote;
+  final String formatNote;
 }

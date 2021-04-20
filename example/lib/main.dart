@@ -5,16 +5,15 @@ import 'package:barcode_scan2/barcode_scan2.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-void main() {
-  runApp(_MyApp());
-}
+void main() => runApp(const _App());
 
-class _MyApp extends StatefulWidget {
+class _App extends StatefulWidget {
+  const _App({Key? key}) : super(key: key);
   @override
-  _MyAppState createState() => _MyAppState();
+  _AppState createState() => _AppState();
 }
 
-class _MyAppState extends State<_MyApp> {
+class _AppState extends State<_App> {
   ScanResult? scanResult;
 
   final _flashOnController = TextEditingController(text: 'Flash on');
@@ -27,14 +26,13 @@ class _MyAppState extends State<_MyApp> {
   var _useAutoFocus = true;
   var _autoEnableFlash = false;
 
-  static final _possibleFormats = BarcodeFormat.values.toList()
+  static final _possibleFormats = BarcodeFormat.values
     ..removeWhere((e) => e == BarcodeFormat.unknown);
 
   List<BarcodeFormat> selectedFormats = [..._possibleFormats];
 
   @override
-  // ignore: type_annotate_public_apis
-  initState() {
+  void initState() {
     super.initState();
 
     Future.delayed(Duration.zero, () async {
@@ -47,15 +45,14 @@ class _MyAppState extends State<_MyApp> {
   Widget build(BuildContext context) {
     final scanResult = this.scanResult;
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
           title: const Text('Barcode Scanner Example'),
-          actions: <Widget>[
+          actions: [
             IconButton(
               icon: const Icon(Icons.camera),
               tooltip: 'Scan',
-              onPressed: scan,
+              onPressed: _scan,
             )
           ],
         ),
@@ -230,41 +227,34 @@ class _MyAppState extends State<_MyApp> {
     );
   }
 
-  Future<void> scan() async {
+  Future<void> _scan() async {
     try {
-      final options = ScanOptions(
-        strings: {
-          'cancel': _cancelController.text,
-          'flash_on': _flashOnController.text,
-          'flash_off': _flashOffController.text,
-        },
-        restrictFormat: selectedFormats,
-        useCamera: _selectedCamera,
-        autoEnableFlash: _autoEnableFlash,
-        android: AndroidOptions(
-          aspectTolerance: _aspectTolerance,
-          useAutoFocus: _useAutoFocus,
+      final result = await BarcodeScanner.scan(
+        options: ScanOptions(
+          strings: {
+            'cancel': _cancelController.text,
+            'flash_on': _flashOnController.text,
+            'flash_off': _flashOffController.text,
+          },
+          restrictFormat: selectedFormats,
+          useCamera: _selectedCamera,
+          autoEnableFlash: _autoEnableFlash,
+          android: AndroidOptions(
+            aspectTolerance: _aspectTolerance,
+            useAutoFocus: _useAutoFocus,
+          ),
         ),
       );
-
-      final result = await BarcodeScanner.scan(options: options);
-
       setState(() => scanResult = result);
     } on PlatformException catch (e) {
-      final result = ScanResult(
-        type: ResultType.Error,
-        format: BarcodeFormat.unknown,
-      );
-
-      if (e.code == BarcodeScanner.cameraAccessDenied) {
-        setState(() {
-          result.rawContent = 'The user did not grant the camera permission!';
-        });
-      } else {
-        result.rawContent = 'Unknown error: $e';
-      }
       setState(() {
-        scanResult = result;
+        scanResult = ScanResult(
+          type: ResultType.Error,
+          format: BarcodeFormat.unknown,
+          rawContent: e.code == BarcodeScanner.cameraAccessDenied
+              ? 'The user did not grant the camera permission!'
+              : 'Unknown error: $e',
+        );
       });
     }
   }
