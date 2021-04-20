@@ -64,17 +64,17 @@ class BarcodeScanner {
 
   static Future<ScanResult> _doScan(ScanOptions options) async {
     final config = proto.Configuration()
-          ..useCamera = options.useCamera
-          ..restrictFormat.addAll(options.restrictFormat)
-          ..autoEnableFlash = options.autoEnableFlash
-          ..strings.addAll(options.strings)
-          ..android = (proto.AndroidConfiguration()
-                ..useAutoFocus = options.android.useAutoFocus
-                ..aspectTolerance = options.android.aspectTolerance
-              /**/)
-        /**/;
+      ..useCamera = options.useCamera
+      ..restrictFormat.addAll(options.restrictFormat)
+      ..autoEnableFlash = options.autoEnableFlash
+      ..strings.addAll(options.strings)
+      ..android = (proto.AndroidConfiguration()
+        ..useAutoFocus = options.android.useAutoFocus
+        ..aspectTolerance = options.android.aspectTolerance);
     final buffer = (await _channel.invokeMethod<List<int>>(
-        'scan', config.writeToBuffer()))!;
+      'scan',
+      config.writeToBuffer(),
+    ))!;
     final tmpResult = proto.ScanResult.fromBuffer(buffer);
     return ScanResult(
       format: tmpResult.format,
