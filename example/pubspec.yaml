@@ -6,15 +6,15 @@ environment:
   sdk: '>=2.12.0 <3.0.0'
 
 dependencies:
+  barcode_scan2:
+    path: ../
   cupertino_icons:
   flutter:
     sdk: flutter
 
 dev_dependencies:
-  barcode_scan2:
   flutter_test:
     sdk: flutter
-    path: ../
   pedantic_mono:
 
 flutter:
