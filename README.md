@@ -17,6 +17,7 @@ This provides a simple wrapper for two commonly used iOS and Android libraries:
 - Android: https://github.com/dm77/barcodescanner
 
 ### Features
+
 - [x] Scan 2D barcodes
 - [x] Scan QR codes
 - [x] Control the flash while scanning
@@ -25,6 +26,7 @@ This provides a simple wrapper for two commonly used iOS and Android libraries:
 ## Getting Started
 
 ### Android
+
 For Android, you must do the following before you can use the plugin:
 
 * Add the camera permission to your AndroidManifest.xml
@@ -34,6 +36,7 @@ For Android, you must do the following before you can use the plugin:
 * This plugin is written in Kotlin. Therefore, you need to add Kotlin support to your project. See [installing the Kotlin plugin](https://kotlinlang.org/docs/tutorials/kotlin-android.html#installing-the-kotlin-plugin).
 
 Edit your project-level build.gradle file to look like this:
+
 ```groovy
 buildscript {
     ext.kotlin_version = '1.3.61'
@@ -64,9 +67,11 @@ dependencies:
     # ...
     barcode_scan: any
 ```
+
 Click "Packages get" in Android Studio or run `flutter packages get` in your project folder.
 
 ### iOS
+
 To use on iOS, you must add the the camera usage description to your Info.plist
 
 ```xml
@@ -82,7 +87,6 @@ To use on iOS, you must add the the camera usage description to your Info.plist
 ## Usage
 
 ```dart
-
 import 'package:barcode_scan/barcode_scan.dart';
 
 void main() async {
@@ -100,7 +104,6 @@ void main() async {
 You can pass options to the scan method:
 
 ```dart
-
 import 'package:barcode_scan/barcode_scan.dart';
 
 void main() async {
@@ -132,24 +135,24 @@ void main() async {
 ###  Setup protobuf
 
 Mac:
+
 ```bash
 $ brew install protobuf
 $ brew install swift-protobuf
 ```
+
 Windows / Linux: https://github.com/protocolbuffers/protobuf#protocol-compiler-installation
 
 
 Activate the protobuf dart plugin:
-`$ pub global activate protoc_plugin`
+
+```bash
+$ flutter pub global activate protoc_plugin
+```
 
 Install the`Protobuf Support` plugin for IDEA / Android Studio or `vscode-proto3` for VS Code
 
 If you changed the protos.proto you've to execute the ./generate_proto.sh to update the dart / swift sources
-
-
-
-
-
 
 ## Common problems
 ### Android "Could not find org.jetbrains.kotlin:kotlin-stdlib-jre..."
