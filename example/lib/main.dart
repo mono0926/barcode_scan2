@@ -5,15 +5,15 @@ import 'package:barcode_scan2/barcode_scan2.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-void main() => runApp(const _App());
+void main() => runApp(const App());
 
-class _App extends StatefulWidget {
-  const _App({Key? key}) : super(key: key);
+class App extends StatefulWidget {
+  const App({Key? key}) : super(key: key);
   @override
   _AppState createState() => _AppState();
 }
 
-class _AppState extends State<_App> {
+class _AppState extends State<App> {
   ScanResult? scanResult;
 
   final _flashOnController = TextEditingController(text: 'Flash on');
