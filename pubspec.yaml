@@ -4,9 +4,9 @@ version: 4.0.0+3
 homepage: https://github.com/mono0926/barcode_scan2
 
 dependencies:
-  protobuf: ^2.0.0
   flutter:
     sdk: flutter
+  protobuf: ^2.0.0
 
 dev_dependencies:
   pedantic_mono:

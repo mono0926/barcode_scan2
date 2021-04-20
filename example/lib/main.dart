@@ -17,9 +17,9 @@ class _MyApp extends StatefulWidget {
 class _MyAppState extends State<_MyApp> {
   ScanResult? scanResult;
 
-  final _flashOnController = TextEditingController(text: "Flash on");
-  final _flashOffController = TextEditingController(text: "Flash off");
-  final _cancelController = TextEditingController(text: "Cancel");
+  final _flashOnController = TextEditingController(text: 'Flash on');
+  final _flashOffController = TextEditingController(text: 'Flash off');
+  final _cancelController = TextEditingController(text: 'Cancel');
 
   var _aspectTolerance = 0.00;
   var _numberOfCameras = 0;
@@ -52,33 +52,33 @@ class _MyAppState extends State<_MyApp> {
           child: Column(
             children: <Widget>[
               ListTile(
-                title: Text("Result Type"),
+                title: const Text('Result Type'),
                 subtitle: Text(scanResult.type.toString()),
               ),
               ListTile(
-                title: Text("Raw Content"),
+                title: const Text('Raw Content'),
                 subtitle: Text(scanResult.rawContent),
               ),
               ListTile(
-                title: Text("Format"),
+                title: const Text('Format'),
                 subtitle: Text(scanResult.format.toString()),
               ),
               ListTile(
-                title: Text("Format note"),
+                title: const Text('Format note'),
                 subtitle: Text(scanResult.formatNote),
               ),
             ],
           ),
         ),
-      ListTile(
-        title: Text("Camera selection"),
+      const ListTile(
+        title: Text('Camera selection'),
         dense: true,
         enabled: false,
       ),
       RadioListTile(
         onChanged: (v) => setState(() => _selectedCamera = -1),
         value: -1,
-        title: Text("Default camera"),
+        title: const Text('Default camera'),
         groupValue: _selectedCamera,
       ),
     ];
@@ -87,40 +87,40 @@ class _MyAppState extends State<_MyApp> {
       contentList.add(RadioListTile(
         onChanged: (v) => setState(() => _selectedCamera = i),
         value: i,
-        title: Text("Camera ${i + 1}"),
+        title: Text('Camera ${i + 1}'),
         groupValue: _selectedCamera,
       ));
     }
 
     contentList.addAll([
-      ListTile(
-        title: Text("Button Texts"),
+      const ListTile(
+        title: Text('Button Texts'),
         dense: true,
         enabled: false,
       ),
       ListTile(
         title: TextField(
-          decoration: InputDecoration(
+          decoration: const InputDecoration(
             floatingLabelBehavior: FloatingLabelBehavior.always,
-            labelText: "Flash On",
+            labelText: 'Flash On',
           ),
           controller: _flashOnController,
         ),
       ),
       ListTile(
         title: TextField(
-          decoration: InputDecoration(
+          decoration: const InputDecoration(
             floatingLabelBehavior: FloatingLabelBehavior.always,
-            labelText: "Flash Off",
+            labelText: 'Flash Off',
           ),
           controller: _flashOffController,
         ),
       ),
       ListTile(
         title: TextField(
-          decoration: InputDecoration(
+          decoration: const InputDecoration(
             floatingLabelBehavior: FloatingLabelBehavior.always,
-            labelText: "Cancel",
+            labelText: 'Cancel',
           ),
           controller: _cancelController,
         ),
@@ -129,17 +129,17 @@ class _MyAppState extends State<_MyApp> {
 
     if (Platform.isAndroid) {
       contentList.addAll([
-        ListTile(
-          title: Text("Android specific options"),
+        const ListTile(
+          title: Text('Android specific options'),
           dense: true,
           enabled: false,
         ),
         ListTile(
           title:
-              Text("Aspect tolerance (${_aspectTolerance.toStringAsFixed(2)})"),
+              Text('Aspect tolerance (${_aspectTolerance.toStringAsFixed(2)})'),
           subtitle: Slider(
-            min: -1.0,
-            max: 1.0,
+            min: -1,
+            max: 1,
             value: _aspectTolerance,
             onChanged: (value) {
               setState(() {
@@ -149,7 +149,7 @@ class _MyAppState extends State<_MyApp> {
           ),
         ),
         CheckboxListTile(
-          title: Text("Use autofocus"),
+          title: const Text('Use autofocus'),
           value: _useAutoFocus,
           onChanged: (checked) {
             setState(() {
@@ -160,76 +160,75 @@ class _MyAppState extends State<_MyApp> {
       ]);
     }
 
-    contentList.addAll([
-      ListTile(
-        title: Text("Other options"),
-        dense: true,
-        enabled: false,
-      ),
-      CheckboxListTile(
-        title: Text("Start with flash"),
-        value: _autoEnableFlash,
-        onChanged: (checked) {
-          setState(() {
-            _autoEnableFlash = checked!;
-          });
-        },
-      )
-    ]);
-
-    contentList.addAll([
-      ListTile(
-        title: Text("Barcode formats"),
-        dense: true,
-        enabled: false,
-      ),
-      ListTile(
-        trailing: Checkbox(
-          tristate: true,
-          materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-          value: selectedFormats.length == _possibleFormats.length
-              ? true
-              : selectedFormats.isEmpty
-                  ? false
-                  : null,
+    contentList
+      ..addAll([
+        const ListTile(
+          title: Text('Other options'),
+          dense: true,
+          enabled: false,
+        ),
+        CheckboxListTile(
+          title: const Text('Start with flash'),
+          value: _autoEnableFlash,
           onChanged: (checked) {
             setState(() {
-              selectedFormats = [
-                if (checked ?? false) ..._possibleFormats,
-              ];
+              _autoEnableFlash = checked!;
             });
           },
+        )
+      ])
+      ..addAll([
+        const ListTile(
+          title: Text('Barcode formats'),
+          dense: true,
+          enabled: false,
         ),
-        dense: true,
-        enabled: false,
-        title: Text("Detect barcode formats"),
-        subtitle: Text(
-          'If all are unselected, all possible platform formats will be used',
+        ListTile(
+          trailing: Checkbox(
+            tristate: true,
+            materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+            value: selectedFormats.length == _possibleFormats.length
+                ? true
+                : selectedFormats.isEmpty
+                    ? false
+                    : null,
+            onChanged: (checked) {
+              setState(() {
+                selectedFormats = [
+                  if (checked ?? false) ..._possibleFormats,
+                ];
+              });
+            },
+          ),
+          dense: true,
+          enabled: false,
+          title: const Text('Detect barcode formats'),
+          subtitle: const Text(
+            'If all are unselected, all possible platform formats will be used',
+          ),
         ),
-      ),
-    ]);
-
-    contentList.addAll(_possibleFormats.map(
-      (format) => CheckboxListTile(
-        value: selectedFormats.contains(format),
-        onChanged: (i) {
-          setState(() => selectedFormats.contains(format)
-              ? selectedFormats.remove(format)
-              : selectedFormats.add(format));
-        },
-        title: Text(format.toString()),
-      ),
-    ));
+      ])
+      ..addAll(_possibleFormats.map(
+        (format) => CheckboxListTile(
+          value: selectedFormats.contains(format),
+          onChanged: (i) {
+            setState(() => selectedFormats.contains(format)
+                ? selectedFormats.remove(format)
+                : selectedFormats.add(format));
+          },
+          title: Text(format.toString()),
+        ),
+      ));
 
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Barcode Scanner Example'),
+          title: const Text('Barcode Scanner Example'),
           actions: <Widget>[
             IconButton(
-              icon: Icon(Icons.camera),
-              tooltip: "Scan",
+              icon: const Icon(Icons.camera),
+              tooltip: 'Scan',
               onPressed: scan,
             )
           ],
@@ -245,11 +244,11 @@ class _MyAppState extends State<_MyApp> {
 
   Future scan() async {
     try {
-      var options = ScanOptions(
+      final options = ScanOptions(
         strings: {
-          "cancel": _cancelController.text,
-          "flash_on": _flashOnController.text,
-          "flash_off": _flashOffController.text,
+          'cancel': _cancelController.text,
+          'flash_on': _flashOnController.text,
+          'flash_off': _flashOffController.text,
         },
         restrictFormat: selectedFormats,
         useCamera: _selectedCamera,
@@ -260,11 +259,11 @@ class _MyAppState extends State<_MyApp> {
         ),
       );
 
-      var result = await BarcodeScanner.scan(options: options);
+      final result = await BarcodeScanner.scan(options: options);
 
       setState(() => scanResult = result);
     } on PlatformException catch (e) {
-      var result = ScanResult(
+      final result = ScanResult(
         type: ResultType.Error,
         format: BarcodeFormat.unknown,
       );

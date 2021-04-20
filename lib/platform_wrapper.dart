@@ -35,11 +35,11 @@ class BarcodeScanner {
       return _doScan(options);
     }
 
-    var events = _eventChannel.receiveBroadcastStream();
-    var completer = Completer<ScanResult>();
+    final events = _eventChannel.receiveBroadcastStream();
+    final completer = Completer<ScanResult>();
 
     late StreamSubscription subscription;
-    subscription = events.listen((event) async {
+    subscription = events.listen((dynamic event) async {
       if (event is String) {
         if (event == cameraAccessGranted) {
           subscription.cancel();
@@ -51,8 +51,8 @@ class BarcodeScanner {
       }
     });
 
-    var permissionsRequested =
-        await _channel.invokeMethod('requestCameraPermission');
+    final permissionsRequested =
+        (await _channel.invokeMethod<bool>('requestCameraPermission'))!;
 
     if (permissionsRequested) {
       return completer.future;
@@ -63,7 +63,7 @@ class BarcodeScanner {
   }
 
   static Future<ScanResult> _doScan(ScanOptions options) async {
-    var config = proto.Configuration()
+    final config = proto.Configuration()
           ..useCamera = options.useCamera
           ..restrictFormat.addAll(options.restrictFormat)
           ..autoEnableFlash = options.autoEnableFlash
@@ -73,8 +73,9 @@ class BarcodeScanner {
                 ..aspectTolerance = options.android.aspectTolerance
               /**/)
         /**/;
-    var buffer = await _channel.invokeMethod('scan', config.writeToBuffer());
-    var tmpResult = proto.ScanResult.fromBuffer(buffer);
+    final buffer = (await _channel.invokeMethod<List<int>>(
+        'scan', config.writeToBuffer()))!;
+    final tmpResult = proto.ScanResult.fromBuffer(buffer);
     return ScanResult(
       format: tmpResult.format,
       formatNote: tmpResult.formatNote,
@@ -86,6 +87,6 @@ class BarcodeScanner {
   /// Returns the number of cameras which are available
   /// Use n-1 as the index of the camera which should be used.
   static Future<int> get numberOfCameras async {
-    return (await _channel.invokeMethod('numberOfCameras')) as int;
+    return (await _channel.invokeMethod<int>('numberOfCameras'))!;
   }
 }
