@@ -5,7 +5,7 @@
 
 ## Reborned🎉
 
-Original [barcode_scan](https://pub.dev/packages/barcode_scan) was discontinued, so [barcode_scan2](https://pub.dev/packages/barcode_scan) was borned with sound null safety support🎉
+Original [barcode_scan](https://pub.dev/packages/barcode_scan) was discontinued, so [barcode_scan2](https://pub.dev/packages/barcode_scan2) was borned with sound null safety support🎉
 
 # barcode_scan2
 
