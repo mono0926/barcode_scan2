@@ -1,6 +1,7 @@
 name: barcode_scan_example
 description: Demonstrates how to use the barcode_scan plugin.
 version: 1.0.0+1
+publish_to: none
 
 environment:
   sdk: '>=2.12.0 <3.0.0'
