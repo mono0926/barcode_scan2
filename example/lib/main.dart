@@ -26,7 +26,7 @@ class _AppState extends State<App> {
   var _useAutoFocus = true;
   var _autoEnableFlash = false;
 
-  static final _possibleFormats = BarcodeFormat.values
+  static final _possibleFormats = BarcodeFormat.values.toList()
     ..removeWhere((e) => e == BarcodeFormat.unknown);
 
   List<BarcodeFormat> selectedFormats = [..._possibleFormats];
