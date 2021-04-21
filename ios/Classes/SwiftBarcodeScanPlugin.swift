@@ -11,7 +11,7 @@ public class SwiftBarcodeScanPlugin: NSObject, FlutterPlugin, BarcodeScannerView
     public static func register(with registrar: FlutterPluginRegistrar) {
         let channel = FlutterMethodChannel(name: "de.mintware.barcode_scan", binaryMessenger: registrar.messenger())
         let instance = SwiftBarcodeScanPlugin()
-        instance.hostViewController = UIApplication.shared.delegate?.window??.rootViewController
+        instance.hostViewController = topViewController()
         registrar.addMethodCallDelegate(instance, channel: channel)
     }
     
@@ -68,6 +68,19 @@ public class SwiftBarcodeScanPlugin: NSObject, FlutterPlugin, BarcodeScannerView
     
     func didFailWithErrorCode(_ controller: BarcodeScannerViewController?, errorCode: String) {
         result?(FlutterError(code: errorCode, message: nil, details: nil))
+    }
+    
+    private class func topViewController(base: UIViewController? = UIApplication.shared.keyWindow?.rootViewController) -> UIViewController? {
+        if let nav = base as? UINavigationController {
+            return topViewController(base: nav.visibleViewController)
+
+        } else if let tab = base as? UITabBarController, let selected = tab.selectedViewController {
+            return topViewController(base: selected)
+
+        } else if let presented = base?.presentedViewController {
+            return topViewController(base: presented)
+        }
+        return base
     }
 }
 
