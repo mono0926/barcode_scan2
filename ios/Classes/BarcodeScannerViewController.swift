@@ -53,6 +53,8 @@ class BarcodeScannerViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+
+    UIDevice.current.endGeneratingDeviceOrientationNotifications()
     
     #if targetEnvironment(simulator)
     view.backgroundColor = .lightGray
@@ -88,6 +90,8 @@ class BarcodeScannerViewController: UIViewController {
       scanner!.stopScanning()
     }
     
+    UIDevice.current.endGeneratingDeviceOrientationNotifications()
+    
     scanRect?.startAnimating()
     MTBBarcodeScanner.requestCameraPermission(success: { success in
       if success {
@@ -103,6 +107,8 @@ class BarcodeScannerViewController: UIViewController {
   override func viewWillDisappear(_ animated: Bool) {
     scanner?.stopScanning()
     scanRect?.stopAnimating()
+    
+    UIDevice.current.beginGeneratingDeviceOrientationNotifications()
     
     if isFlashOn {
       setFlashState(false)
