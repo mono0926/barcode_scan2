@@ -1,5 +1,5 @@
 ## 4.0.1
-Fix When ViewController whose view is not in the window hierarchy , present Scan ViewController failed will failed.
+- Fix When ViewController whose view is not in the window hierarchy , present Scan ViewController failed will failed.
 
 ## 4.0.0
 
