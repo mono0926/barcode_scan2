@@ -1,6 +1,8 @@
-## 4.1.0
+## 4.0.1
 
+- Fix When ViewController whose view is not in the window hierarchy, present Scan ViewController failed will failed.
 - Lock screen rotation when scanner is shown
+
 
 ## 4.0.0
 
