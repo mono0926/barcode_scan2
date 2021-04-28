@@ -1,3 +1,8 @@
+## 4.1.3
+
+- Fix Error in release mode properly (#9)
+  - Previously, it was fixed by reverting https://github.com/mono0926/barcode_scan2/commit/cea32818174b62326d3f798c264f0e78f1a05aae , but it caused another error when using with cloud_firestore etc. So that change is applied again and fixed original issue by https://github.com/mono0926/barcode_scan2/commit/d540aef8eaf693fb2628449d00aa7a422c6e1d65
+
 ## 4.1.2
 
 - Fix Error in release mode (#9)
