@@ -1,3 +1,7 @@
+## 4.1.4
+
+- Broken artifact fixes for Apple Silicon M1 (#28)
+
 ## 4.1.3
 
 - Fix Error in release mode properly (#9)
