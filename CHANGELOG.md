@@ -1,3 +1,7 @@
+## 4.2.0
+
+- Changed protobuf_version and compileSdkVersion to support Android 12 / SDK 31
+
 ## 4.1.4
 
 - Broken artifact fixes for Apple Silicon M1 (#28)
