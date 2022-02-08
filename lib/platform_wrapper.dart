@@ -12,6 +12,7 @@ import 'gen/protos/protos.pb.dart' as proto;
 class BarcodeScanner {
   /// If the user has granted the access to the camera this code is returned.
   static const cameraAccessGranted = 'PERMISSION_GRANTED';
+  static const userCanceled = 'USER_CANCELED';
 
   /// If the user has not granted the access to the camera this code is thrown.
   static const cameraAccessDenied = 'PERMISSION_NOT_GRANTED';

@@ -169,6 +169,7 @@ class BarcodeScannerViewController: UIViewController {
   
   @objc private func cancel() {
     scanResult( ScanResult.with {
+    [self.delegate barcodeScannerViewController:self didFailWithErrorCode:@"USER_CANCELED"];
       $0.type = .cancelled
       $0.format = .unknown
     });
