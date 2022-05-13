@@ -56,7 +56,7 @@ class ChannelHandler(private val activityHelper: ActivityHelper
         result.success(activityHelper.requestCameraAccessIfNecessary(sink))
     }
 
-    fun startListening(messenger: BinaryMessenger?) {
+    fun startListening(messenger: BinaryMessenger) {
         if (methodChannel != null) {
             stopListening()
         }
