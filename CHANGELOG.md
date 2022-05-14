@@ -1,3 +1,7 @@
+## 4.2.1
+
+- Fix compile error (#48, #49)
+
 ## 4.2.0
 
 - Changed protobuf_version and compileSdkVersion to support Android 12 / SDK 31
