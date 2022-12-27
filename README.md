@@ -65,7 +65,7 @@ Now you can depend on the barcode_scan plugin in your pubspec.yaml file:
 ```yaml
 dependencies:
     # ...
-    barcode_scan: any
+    barcode_scan2: any
 ```
 
 Click "Packages get" in Android Studio or run `flutter packages get` in your project folder.
@@ -87,7 +87,7 @@ To use on iOS, you must add the the camera usage description to your Info.plist
 ## Usage
 
 ```dart
-import 'package:barcode_scan/barcode_scan.dart';
+import 'package:barcode_scan2/barcode_scan2.dart';
 
 void main() async {
   var result = await BarcodeScanner.scan();
@@ -104,7 +104,7 @@ void main() async {
 You can pass options to the scan method:
 
 ```dart
-import 'package:barcode_scan/barcode_scan.dart';
+import 'package:barcode_scan2/barcode_scan2.dart';
 
 void main() async {
 
