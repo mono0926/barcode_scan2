@@ -1,3 +1,7 @@
+## 4.2.1+1
+
+- Fix README (#59)
+
 ## 4.2.1
 
 - Fix compile error (#48, #49)
