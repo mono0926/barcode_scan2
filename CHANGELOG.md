@@ -1,3 +1,7 @@
+## 4.2.2
+
+- Migrate from JCenter to Maven Central for gradle dependencies (#57)
+
 ## 4.2.1+1
 
 - Fix README (#59)
