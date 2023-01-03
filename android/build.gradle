@@ -68,7 +68,7 @@ protobuf {
 dependencies {
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation 'me.dm7.barcodescanner:zxing:1.9.13'
+    implementation 'me.dm7.barcodescanner:zxing:1.9.8'
     implementation "com.google.protobuf:protobuf-javalite:$javaliteVersion"
     api 'com.google.android.material:material:1.1.0'
 }
