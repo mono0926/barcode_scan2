@@ -1,3 +1,7 @@
+## 4.2.3
+
+- zxing version 1.9.13 does not exist in the mavenCentral (#60)
+
 ## 4.2.2
 
 - Migrate from JCenter to Maven Central for gradle dependencies (#57)
