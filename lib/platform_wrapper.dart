@@ -42,9 +42,11 @@ class BarcodeScanner {
     subscription = events.listen((dynamic event) async {
       if (event is String) {
         if (event == cameraAccessGranted) {
+          // ignore: unawaited_futures
           subscription.cancel();
           completer.complete(await _doScan(options));
         } else if (event == cameraAccessDenied) {
+          // ignore: unawaited_futures
           subscription.cancel();
           completer.completeError(PlatformException(code: event));
         }
@@ -57,7 +59,7 @@ class BarcodeScanner {
     if (permissionsRequested) {
       return completer.future;
     } else {
-      subscription.cancel();
+      await subscription.cancel();
       return _doScan(options);
     }
   }
