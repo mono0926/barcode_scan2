@@ -1,3 +1,7 @@
+## 4.2.4
+
+- Update Kotlin Gradle plugin version 1.5.20 (#65)
+
 ## 4.2.3
 
 - zxing version 1.9.13 does not exist in the mavenCentral (#60)
