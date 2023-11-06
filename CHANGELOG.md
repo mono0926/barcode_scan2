@@ -1,3 +1,9 @@
+## 4.3.0
+
+- Upgrade min Flutter version to 3.0.1
+- Upgrade protobuf dependency to ^3.1.0
+- Upgrade pedantic_mono dev_dependency to pedantic_mono: ^1.24.0+1
+
 ## 4.2.4
 
 - Update Kotlin Gradle plugin version 1.5.20 (#65)
@@ -29,7 +35,7 @@
 ## 4.1.3
 
 - Fix Error in release mode properly (#9)
-  - Previously, it was fixed by reverting https://github.com/mono0926/barcode_scan2/commit/cea32818174b62326d3f798c264f0e78f1a05aae , but it caused another error when using with cloud_firestore etc. So that change is applied again and fixed original issue by https://github.com/mono0926/barcode_scan2/commit/d540aef8eaf693fb2628449d00aa7a422c6e1d65
+  - Previously, it was fixed by reverting <https://github.com/mono0926/barcode_scan2/commit/cea32818174b62326d3f798c264f0e78f1a05aae> , but it caused another error when using with cloud_firestore etc. So that change is applied again and fixed original issue by <https://github.com/mono0926/barcode_scan2/commit/d540aef8eaf693fb2628449d00aa7a422c6e1d65>
 
 ## 4.1.2
 
@@ -54,4 +60,4 @@
 ---
 
 Prior to 3.0.1, see the CHANGELOG of discontinued original package:
-https://pub.dev/packages/barcode_scan/changelog
+<https://pub.dev/packages/barcode_scan/changelog>
