@@ -53,7 +53,7 @@ class _AppState extends State<App> {
               icon: const Icon(Icons.camera),
               tooltip: 'Scan',
               onPressed: _scan,
-            )
+            ),
           ],
         ),
         body: ListView(
@@ -249,7 +249,6 @@ class _AppState extends State<App> {
     } on PlatformException catch (e) {
       setState(() {
         scanResult = ScanResult(
-          type: ResultType.Error,
           rawContent: e.code == BarcodeScanner.cameraAccessDenied
               ? 'The user did not grant the camera permission!'
               : 'Unknown error: $e',

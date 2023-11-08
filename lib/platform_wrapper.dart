@@ -38,7 +38,7 @@ class BarcodeScanner {
     final events = _eventChannel.receiveBroadcastStream();
     final completer = Completer<ScanResult>();
 
-    late StreamSubscription subscription;
+    late StreamSubscription<dynamic> subscription;
     subscription = events.listen((dynamic event) async {
       if (event is String) {
         if (event == cameraAccessGranted) {
