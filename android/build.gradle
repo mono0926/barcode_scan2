@@ -3,7 +3,7 @@ version '1.0-SNAPSHOT'
 
 buildscript {
     ext.kotlin_version = '1.5.20'
-    ext.protobuf_version = '0.8.18'
+    ext.protobuf_version = '0.9.1'
     ext.protocVersion = '3.11.0'
     ext.javaliteVersion = '3.11.0'
     repositories {
