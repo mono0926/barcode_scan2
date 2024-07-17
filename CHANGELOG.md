@@ -1,3 +1,7 @@
+## 4.3.3
+
+- Ensure only one scan result callback, fixing (#23, #89)
+
 ## 4.3.2
 
 - Add compatibility with Gradle 8+ (#87)
