@@ -44,9 +44,9 @@ class ActivityHelper(private var applicationContext: Context?,
             return false
         }
 
-        return activityResultMap
-                .getValue(requestCode)
-                .onActivityResult(requestCode, resultCode, data)
+        val scanResultHandler = activityResultMap.getValue(requestCode)
+        activityResultMap.remove(requestCode)
+        return scanResultHandler.onActivityResult(requestCode, resultCode, data)
     }
 
     fun requestCameraAccessIfNecessary(sink: EventChannel.EventSink?
