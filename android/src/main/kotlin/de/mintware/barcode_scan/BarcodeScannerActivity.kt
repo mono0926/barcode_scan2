@@ -62,6 +62,11 @@ class BarcodeScannerActivity : Activity(), ZXingScannerView.ResultHandler {
         requestedOrientation = orientation
 
         config = Protos.Configuration.parseFrom(intent.extras!!.getByteArray(EXTRA_CONFIG))
+
+        var title = config.android.appBarTitle as String
+        if (title.isNotEmpty()) {
+            actionBar?.title = title
+        }
     }
 
     private fun setupScannerView() {
