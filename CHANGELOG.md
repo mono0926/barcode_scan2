@@ -1,3 +1,7 @@
+## 4.4.0
+
+- Add support for changing the AppBar title on Android (#99)
+
 ## 4.3.3
 
 - Ensure only one scan result callback, fixing (#23, #89)
