@@ -4,6 +4,7 @@ class AndroidOptions {
   const AndroidOptions({
     this.aspectTolerance = 0.5,
     this.useAutoFocus = true,
+    this.appBarTitle = '',
   });
 
   /// You can optionally set aspect ratio tolerance level
@@ -14,4 +15,7 @@ class AndroidOptions {
   /// Set to true to enable auto focus
   /// This parameter is only supported on Android devices.
   final bool useAutoFocus;
+
+  /// This sets the string in the appBar (Android only)
+  final String appBarTitle;
 }

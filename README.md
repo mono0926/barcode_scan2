@@ -129,6 +129,7 @@ void main() async {
 | `autoEnableFlash`          | `bool`            | Enable the flash when start scanning                                                      | iOS + Android |
 | `android.aspectTolerance`  | `double`          | Enable auto focus on Android                                                              | Android only  |
 | `android.useAutoFocus`     | `bool`            | Set aspect ratio tolerance level used in calculating the optimal Camera preview size      | Android only  |
+| `android.appBarTitle`      | `String`          | Sets the text of the app bar                                                              | Android only  |
 
 ## Development setup
 

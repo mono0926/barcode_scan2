@@ -72,7 +72,8 @@ class BarcodeScanner {
       ..strings.addAll(options.strings)
       ..android = (proto.AndroidConfiguration()
         ..useAutoFocus = options.android.useAutoFocus
-        ..aspectTolerance = options.android.aspectTolerance);
+        ..aspectTolerance = options.android.aspectTolerance
+        ..appBarTitle = options.android.appBarTitle);
     final buffer = (await _channel.invokeMethod<List<int>>(
       'scan',
       config.writeToBuffer(),

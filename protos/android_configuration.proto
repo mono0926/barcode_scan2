@@ -12,4 +12,7 @@ message AndroidConfiguration {
     // Set to true to enable auto focus
     // This parameter is only supported on Android devices.
     bool useAutoFocus = 2;
+
+    // This sets the string in the appBar (Android only)
+    string appBarTitle = 3;
 }
