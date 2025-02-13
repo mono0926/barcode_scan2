@@ -5,7 +5,6 @@ import androidx.annotation.Nullable
 import io.flutter.embedding.engine.plugins.FlutterPlugin
 import io.flutter.embedding.engine.plugins.activity.ActivityAware
 import io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding
-import io.flutter.plugin.common.PluginRegistry.Registrar
 
 /** BarcodeScanPlugin */
 class BarcodeScanPlugin : FlutterPlugin, ActivityAware {
@@ -32,15 +31,15 @@ class BarcodeScanPlugin : FlutterPlugin, ActivityAware {
     // depending on the user's project. onAttachedToEngine or registerWith must both be defined
     // in the same class.
     companion object {
-        @Suppress("unused")
-        @JvmStatic
-        fun registerWith(registrar: Registrar) {
-            val handler = ChannelHandler(ActivityHelper(
-                    registrar.context(),
-                    registrar.activity()
-            ))
-            handler.startListening(registrar.messenger())
-        }
+//        @Suppress("unused")
+//        @JvmStatic
+//        fun registerWith(registrar: Registrar) {
+//            val handler = ChannelHandler(ActivityHelper(
+//                    registrar.context(),
+//                    registrar.activity()
+//            ))
+//            handler.startListening(registrar.messenger())
+//        }
     }
 
     override fun onDetachedFromEngine(binding: FlutterPlugin.FlutterPluginBinding) {
