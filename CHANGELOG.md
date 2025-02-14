@@ -1,3 +1,7 @@
+## 4.5.0
+
+- Support Flutter 3.29
+
 ## 4.4.0
 
 - Add support for changing the AppBar title on Android (#99)
