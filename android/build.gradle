@@ -4,7 +4,7 @@ version '1.0-SNAPSHOT'
 buildscript {
     ext.kotlin_version = '1.8.0'
     ext.protobuf_version = '0.9.1'
-    ext.protocVersion = '3.21.12'  // NOTE: protoc のバージョンを ARM64対応のものに固定
+    ext.protocVersion = '3.21.12'
     ext.javaliteVersion = '3.11.0'
     
     repositories {
