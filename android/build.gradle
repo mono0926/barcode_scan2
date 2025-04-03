@@ -6,7 +6,6 @@ buildscript {
     ext.protobuf_version = '0.9.1'
     ext.protocVersion = '3.21.12'
     ext.javaliteVersion = '3.11.0'
-    
     repositories {
         google()
         mavenCentral()
