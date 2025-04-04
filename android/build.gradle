@@ -4,7 +4,7 @@ version '1.0-SNAPSHOT'
 buildscript {
     ext.kotlin_version = '1.8.0'
     ext.protobuf_version = '0.9.1'
-    ext.protocVersion = '3.11.0'
+    ext.protocVersion = '3.21.12'
     ext.javaliteVersion = '3.11.0'
     repositories {
         google()
@@ -30,6 +30,8 @@ apply plugin: 'kotlin-android'
 apply plugin: 'com.google.protobuf'
 
 android {
+    namespace 'de.mintware.barcode_scan'
+
     if (project.android.hasProperty("namespace")) {
         namespace("de.mintware.barcode_scan")
     }
@@ -64,7 +66,11 @@ protobuf {
     // Configure the protoc executable
     protoc {
         if (osdetector.os == "osx") {
-            artifact = "com.google.protobuf:protoc:$protocVersion:osx-x86_64"
+            if (osdetector.arch == "aarch_64" || osdetector.arch == "arm64") {
+                artifact = "com.google.protobuf:protoc:$protocVersion:osx-aarch_64"
+            } else {
+                artifact = "com.google.protobuf:protoc:$protocVersion:osx-x86_64"
+            }
         } else {
             artifact = "com.google.protobuf:protoc:$protocVersion"
         }
