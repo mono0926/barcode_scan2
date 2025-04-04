@@ -1,3 +1,7 @@
+## 4.5.1
+
+- Fix Android build fails on Apple Silicon M3(#104, #105)
+
 ## 4.5.0
 
 - Support Flutter 3.29
