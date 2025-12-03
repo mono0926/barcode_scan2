@@ -36,7 +36,7 @@ android {
         namespace("de.mintware.barcode_scan")
     }
 
-    compileSdkVersion 31
+    compileSdkVersion 36
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
