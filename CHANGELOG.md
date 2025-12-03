@@ -1,3 +1,8 @@
+## 4.5.2
+
+- protobuf 4.0.0(#109)
+- Update to Android 36(#112)
+
 ## 4.5.1
 
 - Fix Android build fails on Apple Silicon M3(#104, #105)
