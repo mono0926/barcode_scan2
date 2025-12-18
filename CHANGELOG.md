@@ -1,3 +1,7 @@
+## 4.5.3
+
+- Fixes issue with dismissing the view when cancel is clicked on ios(#113)
+
 ## 4.5.2
 
 - protobuf 4.0.0(#109)
