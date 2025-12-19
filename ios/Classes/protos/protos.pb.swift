@@ -240,9 +240,9 @@ extension AndroidConfiguration: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
       // allocates stack space for every case branch when no optimizations are
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
-      case 1: try { try decoder.decodeSingularDoubleField(value: &self.aspectTolerance) }()
-      case 2: try { try decoder.decodeSingularBoolField(value: &self.useAutoFocus) }()
-      case 3: try { try decoder.decodeSingularStringField(value: &self.appBarTitle) }()
+      case 1: try decoder.decodeSingularDoubleField(value: &self.aspectTolerance)
+      case 2: try decoder.decodeSingularBoolField(value: &self.useAutoFocus)
+      case 3: try decoder.decodeSingularStringField(value: &self.appBarTitle)
       default: break
       }
     }
@@ -280,11 +280,11 @@ extension Configuration: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
       // allocates stack space for every case branch when no optimizations are
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
-      case 1: try { try decoder.decodeMapField(fieldType: SwiftProtobuf._ProtobufMap<SwiftProtobuf.ProtobufString,SwiftProtobuf.ProtobufString>.self, value: &self.strings) }()
-      case 2: try { try decoder.decodeRepeatedEnumField(value: &self.restrictFormat) }()
-      case 3: try { try decoder.decodeSingularInt32Field(value: &self.useCamera) }()
-      case 4: try { try decoder.decodeSingularMessageField(value: &self._android) }()
-      case 5: try { try decoder.decodeSingularBoolField(value: &self.autoEnableFlash) }()
+      case 1: try decoder.decodeMapField(fieldType: SwiftProtobuf._ProtobufMap<SwiftProtobuf.ProtobufString,SwiftProtobuf.ProtobufString>.self, value: &self.strings)
+      case 2: try decoder.decodeRepeatedEnumField(value: &self.restrictFormat)
+      case 3: try decoder.decodeSingularInt32Field(value: &self.useCamera)
+      case 4: try decoder.decodeSingularMessageField(value: &self._android)
+      case 5: try decoder.decodeSingularBoolField(value: &self.autoEnableFlash)
       default: break
       }
     }
@@ -304,9 +304,9 @@ extension Configuration: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
     if self.useCamera != 0 {
       try visitor.visitSingularInt32Field(value: self.useCamera, fieldNumber: 3)
     }
-    try { if let v = self._android {
+    if let v = self._android {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-    } }()
+    }
     if self.autoEnableFlash != false {
       try visitor.visitSingularBoolField(value: self.autoEnableFlash, fieldNumber: 5)
     }
@@ -334,10 +334,10 @@ extension ScanResult: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementatio
       // allocates stack space for every case branch when no optimizations are
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
-      case 1: try { try decoder.decodeSingularEnumField(value: &self.type) }()
-      case 2: try { try decoder.decodeSingularStringField(value: &self.rawContent) }()
-      case 3: try { try decoder.decodeSingularEnumField(value: &self.format) }()
-      case 4: try { try decoder.decodeSingularStringField(value: &self.formatNote) }()
+      case 1: try decoder.decodeSingularEnumField(value: &self.type)
+      case 2: try decoder.decodeSingularStringField(value: &self.rawContent)
+      case 3: try decoder.decodeSingularEnumField(value: &self.format)
+      case 4: try decoder.decodeSingularStringField(value: &self.formatNote)
       default: break
       }
     }
