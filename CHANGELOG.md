@@ -1,3 +1,7 @@
+## 4.6.0
+
+- Upgrade toolchain and fix iOS/Android compatibility issues(#114)
+
 ## 4.5.3
 
 - Fixes issue with dismissing the view when cancel is clicked on ios(#113)
