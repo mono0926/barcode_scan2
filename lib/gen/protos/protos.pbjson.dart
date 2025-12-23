@@ -1,13 +1,15 @@
+// This is a generated file - do not edit.
 //
-//  Generated code. Do not modify.
-//  source: protos/protos.proto
-//
-// @dart = 2.12
+// Generated from protos/protos.proto.
+
+// @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
-// ignore_for_file: constant_identifier_names, library_prefixes
-// ignore_for_file: non_constant_identifier_names, prefer_final_fields
-// ignore_for_file: unnecessary_import, unnecessary_this, unused_import
+// ignore_for_file: constant_identifier_names
+// ignore_for_file: curly_braces_in_flow_control_structures
+// ignore_for_file: deprecated_member_use_from_same_package, library_prefixes
+// ignore_for_file: non_constant_identifier_names, prefer_relative_imports
+// ignore_for_file: unused_import
 
 import 'dart:convert' as $convert;
 import 'dart:core' as $core;
@@ -72,10 +74,31 @@ final $typed_data.Uint8List androidConfigurationDescriptor = $convert.base64Deco
 const Configuration$json = {
   '1': 'Configuration',
   '2': [
-    {'1': 'strings', '3': 1, '4': 3, '5': 11, '6': '.Configuration.StringsEntry', '10': 'strings'},
-    {'1': 'restrictFormat', '3': 2, '4': 3, '5': 14, '6': '.BarcodeFormat', '10': 'restrictFormat'},
+    {
+      '1': 'strings',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.Configuration.StringsEntry',
+      '10': 'strings'
+    },
+    {
+      '1': 'restrictFormat',
+      '3': 2,
+      '4': 3,
+      '5': 14,
+      '6': '.BarcodeFormat',
+      '10': 'restrictFormat'
+    },
     {'1': 'useCamera', '3': 3, '4': 1, '5': 5, '10': 'useCamera'},
-    {'1': 'android', '3': 4, '4': 1, '5': 11, '6': '.AndroidConfiguration', '10': 'android'},
+    {
+      '1': 'android',
+      '3': 4,
+      '4': 1,
+      '5': 11,
+      '6': '.AndroidConfiguration',
+      '10': 'android'
+    },
     {'1': 'autoEnableFlash', '3': 5, '4': 1, '5': 8, '10': 'autoEnableFlash'},
   ],
   '3': [Configuration_StringsEntry$json],
@@ -106,7 +129,14 @@ const ScanResult$json = {
   '2': [
     {'1': 'type', '3': 1, '4': 1, '5': 14, '6': '.ResultType', '10': 'type'},
     {'1': 'rawContent', '3': 2, '4': 1, '5': 9, '10': 'rawContent'},
-    {'1': 'format', '3': 3, '4': 1, '5': 14, '6': '.BarcodeFormat', '10': 'format'},
+    {
+      '1': 'format',
+      '3': 3,
+      '4': 1,
+      '5': 14,
+      '6': '.BarcodeFormat',
+      '10': 'format'
+    },
     {'1': 'formatNote', '3': 4, '4': 1, '5': 9, '10': 'formatNote'},
   ],
 };
@@ -116,4 +146,3 @@ final $typed_data.Uint8List scanResultDescriptor = $convert.base64Decode(
     'CgpTY2FuUmVzdWx0Eh8KBHR5cGUYASABKA4yCy5SZXN1bHRUeXBlUgR0eXBlEh4KCnJhd0Nvbn'
     'RlbnQYAiABKAlSCnJhd0NvbnRlbnQSJgoGZm9ybWF0GAMgASgOMg4uQmFyY29kZUZvcm1hdFIG'
     'Zm9ybWF0Eh4KCmZvcm1hdE5vdGUYBCABKAlSCmZvcm1hdE5vdGU=');
-

@@ -16,10 +16,10 @@ A new flutter plugin project.
   s.source_files = 'Classes/**/*'
   s.dependency 'Flutter'
   s.dependency 'MTBBarcodeScanner'
-  s.dependency 'SwiftProtobuf'
-  s.platform = :ios, '8.0'
+  s.dependency 'SwiftProtobuf', '~> 1.33'
+  s.platform = :ios, '13.0'
 
   # Flutter.framework does not contain a i386 slice. Only x86_64 simulators are supported.
   s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES', 'VALID_ARCHS[sdk=iphonesimulator*]' => 'x86_64' }
-  s.swift_version = '5.0'
+  s.swift_version = '5.9'
 end
