@@ -1,7 +1,7 @@
 ## 4.7.0
 
 - Fixed 10-15 second delay when dismissing scanner on iOS 26+
-- Added documentation for using forked MTBBarcodeScanner with iOS 26+ fix
+- Vendored MTBBarcodeScanner source with fix (no Podfile override required)
 - Root cause: AVCaptureVideoPreviewLayer.session = nil blocks on main thread waiting for camera pipeline sync
 
 ## 4.6.0
