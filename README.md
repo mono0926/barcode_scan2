@@ -83,6 +83,27 @@ To use on iOS, you must add the the camera usage description to your Info.plist
 </dict>
 ```
 
+### iOS 26+ Fix (Required)
+
+On iOS 26+, there's a 10-15 second delay when dismissing the scanner due to changes in Apple's camera framework. To fix this, add the following to your `ios/Podfile` **before** `flutter_install_all_ios_pods`:
+
+```ruby
+target 'Runner' do
+  use_frameworks!
+  use_modular_headers!
+
+  # Use forked MTBBarcodeScanner with iOS 26+ fix
+  pod 'MTBBarcodeScanner', :git => 'https://github.com/Stampino/MTBBarcodeScanner.git', :branch => 'develop'
+
+  flutter_install_all_ios_pods File.dirname(File.realpath(__FILE__))
+end
+```
+
+Then run:
+```bash
+cd ios && pod install --repo-update && cd ..
+```
+
 
 ## Usage
 

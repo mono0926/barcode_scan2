@@ -31,6 +31,9 @@ target 'Runner' do
   use_frameworks!
   use_modular_headers!
 
+  # Use forked MTBBarcodeScanner with iOS 26+ fix
+  pod 'MTBBarcodeScanner', :git => 'https://github.com/Stampino/MTBBarcodeScanner.git', :branch => 'develop'
+
   flutter_install_all_ios_pods File.dirname(File.realpath(__FILE__))
 end
 
