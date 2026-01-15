@@ -1,3 +1,7 @@
+## 4.7.1
+
+- Fix iOS 26+ Scanner Dismiss Delay (#115)
+
 ## 4.7.0
 
 - Fixed 10-15 second delay when dismissing scanner on iOS 26+
