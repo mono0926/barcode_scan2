@@ -83,6 +83,10 @@ To use on iOS, you must add the the camera usage description to your Info.plist
 </dict>
 ```
 
+### iOS 26+ Compatibility
+
+This fork includes a fix for the 10-15 second delay when dismissing the scanner on iOS 26+. The fix is built-in - no additional configuration required.
+
 
 ## Usage
 
