@@ -1,8 +1,4 @@
-## 4.7.1
-
-- Fix iOS 26+ Scanner Dismiss Delay (#115)
-
-## 4.7.0
+## 4.7.2
 
 - Fixed 10-15 second delay when dismissing scanner on iOS 26+
 - Vendored MTBBarcodeScanner source with fix (no Podfile override required)
