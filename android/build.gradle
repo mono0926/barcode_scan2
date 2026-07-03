@@ -12,7 +12,6 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:8.3.0'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         classpath "com.google.protobuf:protobuf-gradle-plugin:$protobuf_version"
     }
@@ -26,25 +25,37 @@ rootProject.allprojects {
 }
 
 apply plugin: 'com.android.library'
-apply plugin: 'kotlin-android'
 apply plugin: 'com.google.protobuf'
+
+// This is a Kotlin plugin, so its src/main/kotlin must be compiled. AGP 9's
+// built-in Kotlin does that ONLY when it's actually enabled. Under Flutter's
+// bypass (android.builtInKotlin=false) built-in Kotlin is off, so we apply KGP
+// ourselves. Guarding on the flag (not just the AGP version) makes this build
+// under both the bypass and true; the apply text also stops Flutter's loader from
+// auto-applying KGP. Same guard as firebase_database's android/build.gradle.
+def agpMajor = com.android.Version.ANDROID_GRADLE_PLUGIN_VERSION.tokenize('.')[0] as int
+def builtInKotlin = providers.gradleProperty("android.builtInKotlin")
+        .map { it.toBoolean() }
+        .orElse(agpMajor >= 9)
+        .get()
+if (agpMajor < 9 || !builtInKotlin) {
+    apply plugin: 'kotlin-android'
+}
 
 android {
     namespace 'de.mintware.barcode_scan'
 
-    if (project.android.hasProperty("namespace")) {
-        namespace("de.mintware.barcode_scan")
-    }
-
     compileSdkVersion 36
 
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
     }
 
-    kotlinOptions {
-        jvmTarget = '1.8'
+    if (agpMajor < 9 || !builtInKotlin) {
+        kotlinOptions {
+            jvmTarget = JavaVersion.VERSION_17
+        }
     }
 
     sourceSets {
@@ -61,7 +72,6 @@ android {
         disable 'InvalidPackage'
     }
 }
-
 
 protobuf {
     // Configure the protoc executable
@@ -87,7 +97,6 @@ protobuf {
 
 dependencies {
     implementation 'androidx.appcompat:appcompat:1.7.0'
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation 'me.dm7.barcodescanner:zxing:1.9.8'
     implementation "com.google.protobuf:protobuf-javalite:$javaliteVersion"
     api 'com.google.android.material:material:1.11.0'

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 class ScannerOverlay: UIView {
     private let line: UIView = UIView()

@@ -6,6 +6,11 @@
 //
 
 import Foundation
+import UIKit
+import AVFoundation
+#if canImport(MTBBarcodeScanner)
+import MTBBarcodeScanner
+#endif
 
 class BarcodeScannerViewController: UIViewController {
   private var previewView: UIView?

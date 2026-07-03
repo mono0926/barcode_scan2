@@ -13,8 +13,8 @@ A new flutter plugin project.
   s.license          = { :file => '../LICENSE' }
   s.author           = { 'Your Company' => 'email@example.com' }
   s.source           = { :path => '.' }
-  s.source_files = 'Classes/**/*'
-  s.public_header_files = 'Classes/**/*.h'
+  s.source_files = 'barcode_scan2/Sources/barcode_scan2/**/*.swift', 'barcode_scan2/Sources/MTBBarcodeScanner/**/*.{h,m}'
+  s.public_header_files = 'barcode_scan2/Sources/MTBBarcodeScanner/include/MTBBarcodeScanner/*.h'
   s.dependency 'Flutter'
   s.dependency 'SwiftProtobuf', '~> 1.33'
   s.frameworks = 'AVFoundation', 'QuartzCore'

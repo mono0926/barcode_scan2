@@ -3,14 +3,14 @@ import UIKit
 import SwiftProtobuf
 import AVFoundation
 
-public class SwiftBarcodeScanPlugin: NSObject, FlutterPlugin, BarcodeScannerViewControllerDelegate {
-    
+public class BarcodeScanPlugin: NSObject, FlutterPlugin, BarcodeScannerViewControllerDelegate {
+
     private var result: FlutterResult?
     private var hostViewController: UIViewController?
-    
+
     public static func register(with registrar: FlutterPluginRegistrar) {
         let channel = FlutterMethodChannel(name: "de.mintware.barcode_scan", binaryMessenger: registrar.messenger())
-        let instance = SwiftBarcodeScanPlugin()
+        let instance = BarcodeScanPlugin()
         registrar.addMethodCallDelegate(instance, channel: channel)
     }
     
