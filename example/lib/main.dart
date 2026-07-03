@@ -87,19 +87,23 @@ class _AppState extends State<App> {
               dense: true,
               enabled: false,
             ),
-            RadioListTile(
-              onChanged: (v) => setState(() => _selectedCamera = -1),
-              value: -1,
-              title: const Text('Default camera'),
+            RadioGroup<int>(
               groupValue: _selectedCamera,
-            ),
-            ...List.generate(
-              _numberOfCameras,
-              (i) => RadioListTile(
-                onChanged: (v) => setState(() => _selectedCamera = i),
-                value: i,
-                title: Text('Camera ${i + 1}'),
-                groupValue: _selectedCamera,
+              onChanged: (v) => setState(() => _selectedCamera = v ?? -1),
+              child: Column(
+                children: [
+                  RadioListTile<int>(
+                    value: -1,
+                    title: const Text('Default camera'),
+                  ),
+                  ...List.generate(
+                    _numberOfCameras,
+                    (i) => RadioListTile<int>(
+                      value: i,
+                      title: Text('Camera ${i + 1}'),
+                    ),
+                  ),
+                ],
               ),
             ),
             const ListTile(

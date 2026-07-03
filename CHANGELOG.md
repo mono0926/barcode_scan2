@@ -1,8 +1,10 @@
-## 4.8.0
+## 4.8.0 - 2026-07-03
 
-- Adds Swift Package Manager support for iOS (vendored MTBBarcodeScanner becomes its own Obj-C SPM target; the plugin stays CocoaPods-compatible).
-- Migrates Android to Flutter's built-in Kotlin and targets JVM 17.
-- Updates minimum supported SDK version to Flutter 3.44/Dart 3.12.
+### Features
+- iOS: Adopt Swift Package Manager (vendored Obj-C MTBBarcodeScanner becomes its own Obj-C SPM target; the plugin stays CocoaPods-compatible).
+- iOS: Rename the Swift class to `BarcodeScanPlugin` and drop the Obj-C shim.
+- Android: Migrate to built-in Kotlin support (targets JVM 17), compatible with both `android.builtInKotlin` enabled and disabled.
+- Environment: Update Dart SDK requirement to `^3.12.0` and Flutter SDK to `>=3.44.0`.
 
 ## 4.7.2
 

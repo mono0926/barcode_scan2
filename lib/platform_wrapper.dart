@@ -6,9 +6,9 @@ import 'package:flutter/services.dart';
 import './model/model.dart';
 import 'gen/protos/protos.pb.dart' as proto;
 
-// ignore: avoid_classes_with_only_static_members
 /// Barcode scanner plugin
 /// Simply call `var barcode = await BarcodeScanner.scan()` to scan a barcode
+// ignore: avoid_classes_with_only_static_members
 class BarcodeScanner {
   /// If the user has granted the access to the camera this code is returned.
   static const cameraAccessGranted = 'PERMISSION_GRANTED';
