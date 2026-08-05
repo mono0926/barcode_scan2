@@ -2,17 +2,15 @@ group 'de.mintware.barcode_scan'
 version '1.0-SNAPSHOT'
 
 buildscript {
-    ext.kotlin_version = '2.0.0'
-    ext.protobuf_version = '0.9.4'
-    ext.protocVersion = '3.25.0'
-    ext.javaliteVersion = '3.25.0'
+    ext.protobuf_version = '0.10.0'
+    ext.protocVersion = '4.35.1'
+    ext.javaliteVersion = '4.35.1'
     repositories {
         google()
         mavenCentral()
     }
 
     dependencies {
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         classpath "com.google.protobuf:protobuf-gradle-plugin:$protobuf_version"
     }
 }
@@ -27,20 +25,6 @@ rootProject.allprojects {
 apply plugin: 'com.android.library'
 apply plugin: 'com.google.protobuf'
 
-// This is a Kotlin plugin, so its src/main/kotlin must be compiled. AGP 9's
-// built-in Kotlin does that ONLY when it's actually enabled. Under Flutter's
-// bypass (android.builtInKotlin=false) built-in Kotlin is off, so we apply KGP
-// ourselves. Guarding on the flag (not just the AGP version) makes this build
-// under both the bypass and true; the apply text also stops Flutter's loader from
-// auto-applying KGP. Same guard as firebase_database's android/build.gradle.
-def agpMajor = com.android.Version.ANDROID_GRADLE_PLUGIN_VERSION.tokenize('.')[0] as int
-def builtInKotlin = providers.gradleProperty("android.builtInKotlin")
-        .map { it.toBoolean() }
-        .orElse(agpMajor >= 9)
-        .get()
-if (agpMajor < 9 || !builtInKotlin) {
-    apply plugin: 'kotlin-android'
-}
 
 android {
     namespace 'de.mintware.barcode_scan'
@@ -52,11 +36,6 @@ android {
         targetCompatibility JavaVersion.VERSION_17
     }
 
-    if (agpMajor < 9 || !builtInKotlin) {
-        kotlinOptions {
-            jvmTarget = JavaVersion.VERSION_17
-        }
-    }
 
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
@@ -70,6 +49,12 @@ android {
     }
     lintOptions {
         disable 'InvalidPackage'
+    }
+}
+
+kotlin {
+    compilerOptions {
+        jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17)
     }
 }
 
@@ -96,8 +81,8 @@ protobuf {
 }
 
 dependencies {
-    implementation 'androidx.appcompat:appcompat:1.7.0'
+    implementation 'androidx.appcompat:appcompat:1.7.1'
     implementation 'me.dm7.barcodescanner:zxing:1.9.8'
     implementation "com.google.protobuf:protobuf-javalite:$javaliteVersion"
-    api 'com.google.android.material:material:1.11.0'
+    api 'com.google.android.material:material:1.14.0'
 }
