@@ -1,5 +1,5 @@
 import '../gen/protos/protos.pb.dart';
-import '../model/android_options.dart';
+import 'android_options.dart';
 
 /// Provides options to configure the barcode scanner
 class ScanOptions {
