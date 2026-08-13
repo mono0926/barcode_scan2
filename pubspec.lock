@@ -42,10 +42,10 @@ packages:
     dependency: transitive
     description:
       name: lints
-      sha256: a5e2b223cb7c9c8efdc663ef484fdd95bb243bff242ef5b13e26883547fce9a0
+      sha256: "12f842a479589fea194fe5c5a3095abc7be0c1f2ddfa9a0e76aed1dbd26a87df"
       url: "https://pub.dev"
     source: hosted
-    version: "6.0.0"
+    version: "6.1.0"
   material_color_utilities:
     dependency: transitive
     description:
@@ -66,10 +66,10 @@ packages:
     dependency: "direct dev"
     description:
       name: pedantic_mono
-      sha256: "4c556c136b11c27737896db0d3c9b53f1ba68448e7ab4bdb0e3b089b36354365"
+      sha256: "97dc87eef7e3d9a4886b15226401f2829697f340250b0b52d0411ff9596003d2"
       url: "https://pub.dev"
     source: hosted
-    version: "1.35.0"
+    version: "1.37.0"
   protobuf:
     dependency: "direct main"
     description:

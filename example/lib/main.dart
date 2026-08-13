@@ -194,8 +194,8 @@ class _AppState extends State<App> {
                 value: selectedFormats.length == _possibleFormats.length
                     ? true
                     : selectedFormats.isEmpty
-                        ? false
-                        : null,
+                    ? false
+                    : null,
                 onChanged: (checked) {
                   setState(() {
                     selectedFormats = [

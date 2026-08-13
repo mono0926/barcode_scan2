@@ -3,8 +3,8 @@ import 'dart:io' show Platform;
 
 import 'package:flutter/services.dart';
 
-import './model/model.dart';
 import 'gen/protos/protos.pb.dart' as proto;
+import 'model/model.dart';
 
 /// Barcode scanner plugin
 /// Simply call `var barcode = await BarcodeScanner.scan()` to scan a barcode
@@ -17,12 +17,14 @@ class BarcodeScanner {
   static const cameraAccessDenied = 'PERMISSION_NOT_GRANTED';
 
   /// The method channel
-  static const MethodChannel _channel =
-      MethodChannel('de.mintware.barcode_scan');
+  static const MethodChannel _channel = MethodChannel(
+    'de.mintware.barcode_scan',
+  );
 
   /// The event channel
-  static const EventChannel _eventChannel =
-      EventChannel('de.mintware.barcode_scan/events');
+  static const EventChannel _eventChannel = EventChannel(
+    'de.mintware.barcode_scan/events',
+  );
 
   /// Starts the camera for scanning the barcode, shows a preview window and
   /// returns the barcode if one was scanned.
@@ -53,8 +55,9 @@ class BarcodeScanner {
       }
     });
 
-    final permissionsRequested =
-        (await _channel.invokeMethod<bool>('requestCameraPermission'))!;
+    final permissionsRequested = (await _channel.invokeMethod<bool>(
+      'requestCameraPermission',
+    ))!;
 
     if (permissionsRequested) {
       return completer.future;
