@@ -1,3 +1,8 @@
+## 4.8.1 - 2026-08-13
+
+### Fixes
+- Migrate to built-in Kotlin and update Android Gradle configurations (#119)
+
 ## 4.8.0 - 2026-07-03
 
 ### Features
