@@ -1,3 +1,11 @@
+## 4.8.2
+
+### Features
+- Add AI Agent Skill (`barcode_scan2-scanning`)
+
+### Fixes
+- Await returned futures in `_scan` method to resolve `unawaited_futures` warning
+
 ## 4.8.1 - 2026-08-13
 
 ### Fixes
