@@ -34,7 +34,7 @@ class BarcodeScanner {
     ScanOptions options = const ScanOptions(),
   }) async {
     if (Platform.isIOS) {
-      return _doScan(options);
+      return await _doScan(options);
     }
 
     final events = _eventChannel.receiveBroadcastStream();
@@ -60,10 +60,10 @@ class BarcodeScanner {
     ))!;
 
     if (permissionsRequested) {
-      return completer.future;
+      return await completer.future;
     } else {
       await subscription.cancel();
-      return _doScan(options);
+      return await _doScan(options);
     }
   }
 
