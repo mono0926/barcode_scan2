@@ -3,3 +3,10 @@ analyzer:
   exclude:
     - lib/gen/**
     - protos/**
+    - build/**
+    - android/**
+    - ios/**
+linter:
+  rules:
+    unnecessary_await_in_return: false
+
