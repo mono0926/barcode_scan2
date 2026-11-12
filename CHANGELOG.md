@@ -1,3 +1,10 @@
+## 4.9.0
+
+### Features
+- Update Dart SDK requirement to `^3.14.0` and Flutter SDK to `>=3.50.0` (#125)
+- Adopt Dart 3.14 primary constructors and declaring parameters (#125)
+- Migrate `example` app to standalone `material_ui` package and update Gradle 9.5.0 / Kotlin 2.4.20 (#125)
+
 ## 4.8.2
 
 ### Features
