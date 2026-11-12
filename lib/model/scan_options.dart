@@ -2,37 +2,31 @@ import '../gen/protos/protos.pb.dart';
 import 'android_options.dart';
 
 /// Provides options to configure the barcode scanner
-class ScanOptions {
-  /// Create a object which represents the scanner options
-  const ScanOptions({
-    this.restrictFormat = const [],
-    this.useCamera = -1,
-    this.android = const AndroidOptions(),
-    this.autoEnableFlash = false,
-    this.strings = const {
-      'cancel': 'Cancel',
-      'flash_on': 'Flash on',
-      'flash_off': 'Flash off',
-    },
-  }) : assert(useCamera >= -1);
+class const ScanOptions({
+  /// Restrict the supported barcode formats
+  final List<BarcodeFormat> restrictFormat = const [],
+
+  /// Index of the camera which should used. -1 uses the default camera
+  final int useCamera = -1,
+
+  /// Android specific configuration
+  final AndroidOptions android = const AndroidOptions(),
+
+  /// Set to true to automatically enable flash on camera start
+  final bool autoEnableFlash = false,
 
   /// This map contains strings which are displayed to the user
   ///
   /// Possible pairs:
   /// - cancel : The text of the cancel button (iOS only)
-  //  - flash_on : The text of the flash on button
-  //  - flash_off : The Text of the flash off button
-  final Map<String, String> strings;
-
-  /// Restrict the supported barcode formats
-  final List<BarcodeFormat> restrictFormat;
-
-  /// Index of the camera which should used. -1 uses the default camera
-  final int useCamera;
-
-  /// Android specific configuration
-  final AndroidOptions android;
-
-  /// Set to true to automatically enable flash on camera start
-  final bool autoEnableFlash;
+  /// - flash_on : The text of the flash on button
+  /// - flash_off : The Text of the flash off button
+  final Map<String, String> strings = const {
+    'cancel': 'Cancel',
+    'flash_on': 'Flash on',
+    'flash_off': 'Flash off',
+  },
+}) {
+  /// Create a object which represents the scanner options
+  this : assert(useCamera >= -1);
 }

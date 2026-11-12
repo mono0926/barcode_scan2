@@ -9,7 +9,7 @@ import 'model/model.dart';
 /// Barcode scanner plugin
 /// Simply call `var barcode = await BarcodeScanner.scan()` to scan a barcode
 // ignore: avoid_classes_with_only_static_members
-class BarcodeScanner {
+class BarcodeScanner() {
   /// If the user has granted the access to the camera this code is returned.
   static const cameraAccessGranted = 'PERMISSION_GRANTED';
 
