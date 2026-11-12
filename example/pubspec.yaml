@@ -4,7 +4,8 @@ version: 1.0.0+1
 publish_to: none
 
 environment:
-  sdk: ^3.12.2
+  sdk: ^3.14.0
+  flutter: ^3.50.0
 
 dependencies:
   barcode_scan2:
@@ -12,11 +13,12 @@ dependencies:
   cupertino_icons: ^1.0.9
   flutter:
     sdk: flutter
+  material_ui: ^1.11.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  pedantic_mono: ^1.37.0
+  pedantic_mono: ^1.39.0
 
 flutter:
   uses-material-design: true

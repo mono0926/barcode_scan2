@@ -6,7 +6,4 @@ analyzer:
     - build/**
     - android/**
     - ios/**
-linter:
-  rules:
-    unnecessary_await_in_return: false
 
